@@ -16,9 +16,9 @@ module.exports = function(app) {
 	});
 
 	// route to handle creating goes here (app.post)
-	app.post('/api/artists', function(req, res) {
+	// app.post('/api/artists', function(req, res) {
 		
-	});
+	// });
     // route to handle delete goes here (app.delete)
 
     // frontend routes =========================================================

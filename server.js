@@ -3,6 +3,7 @@ var express 	   = require('express');
 var app			   = express();
 var bodyParser 	   = require('body-parser');
 var methodOverride = require('method-override');
+
 // Config ========================================
 
 // config files
@@ -34,7 +35,9 @@ app.use(methodOverride('X-HTTP-Method-Override'));
 app.use(express.static(__dirname + '/public'));
 
 // routes ==================================================
-require('./app/routes', app); // configure our routes
+var routes = require('./app/routes'); // configure our routes
+
+routes(app);
 
 // start app ===============================================
 // startup our app at http://localhost:8080
