@@ -1,1 +1,1 @@
-A simple web app to promote your musical artists and producers. Made to learn MEAN (MongoDB, Express.js, AngularJS, Node.js) stack. 
+A simple web app to promote your favorite musical artists (made to learn MEAN stack).
