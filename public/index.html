@@ -19,6 +19,8 @@
     <script src="js/services/ArtistService.js"></script>
     <script src="js/appRoutes.js"></script>
     <script src="js/app.js"></script>
+
+    <base href="/">
 </head>
 <body ng-app="spin" ng-controller="ArtistController">
 
@@ -27,9 +29,9 @@
 			<div class="navbar-header">
 				<a class="navbar-brand" href="/">Spin</a>
 			</div>
-
-			<ul>
-				<li><a href="/artist">Artists</a></li>
+			
+			<ul class="nav navbar-nav">
+				<li><a class="nav-links" href="artist">Artists</a></li>
 			</ul>
 		</nav>
 
