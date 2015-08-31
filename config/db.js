@@ -1,3 +1,3 @@
 module.exports = {
-	url : 'mongodb://localhost/spin'
+	url : 'mongodb://localhost/spin',
 }
