@@ -1,5 +1,9 @@
 var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
 
-module.exports = mongoose.model('Artist', {
-	name : {type : String, default: ''}
+var artistSchema = new Schema({
+	name: String,
+	genre: String
 });
+
+module.exports = mongoose.model('Artist', artistSchema);

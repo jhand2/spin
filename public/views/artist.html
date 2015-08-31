@@ -2,4 +2,12 @@
 	<h1>Artist</h1>
 
 	<p>{{ tagline }}</p>
+
+	<form>
+		<input type="text" class="form-controll input-lg text-center" placeholder="Add an Artist!" ng-model="formData.text">
+
+		<button type="submit" class="btn btn=primary btn-lg" ng-click="createArtist()">Add</button>
+	</form>
+
+	<p>{{ artists.name }}</p>
 </div>
