@@ -11,7 +11,6 @@ module.exports = function(app) {
     //sample api route
 	app.get('/api/artists', function(req, res) {
 		Artist.find(function(err, artists) {
-			console.log(artists);
 			if (err) {
 				res.send(err);
 			}
@@ -29,7 +28,21 @@ module.exports = function(app) {
 			console.log('artist saved');
 		})
 	});
+
+	//don't think either of these work. Need to learn more
+
     // route to handle delete goes here (app.delete)
+    // app.delete('/api/artists', function(req, res) {
+    // 	Artist.remove({'id': req.body}, function() {
+    // 		req.send("fin");
+    // 	})
+    // });
+
+    // app.deleteAll('/api/artists', function(req, res) {
+    // 	Artist.remove({}, function() {
+    // 		req.send('');
+    // 	})
+    // };
 
     // frontend routes =========================================================
     // route to handle all angular requests

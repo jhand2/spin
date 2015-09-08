@@ -2,9 +2,6 @@ angular.module('ArtistCtrl', []).controller('ArtistController',
 	function($scope, $http, Artist) {
 		$scope.tagline = 'Art is dead';
 		$scope.formData = {};
-		Artist.get(function(err, data) {
-			console.log(data);
-		});
 
 		$scope.createArtist = function() {
 			console.log("calling create");
@@ -12,6 +9,16 @@ angular.module('ArtistCtrl', []).controller('ArtistController',
 			console.log(artistData);
 			Artist.create(artistData);
 			$scope.formData = {};
+		};
+
+		$scope.getArtists = function() {
+			Artist.get().then(function(response) {
+				$scope.artists = response.data;
+			});
+		}
+
+		$scope.deleteArtists = function(id) {
+			Artist.remove(id);
 		};
 	}
 );

@@ -7,7 +7,12 @@
 		<input type="text" class="form-controll input-lg text-center" placeholder="Add an Artist!" ng-model="formData.text">
 
 		<button type="submit" class="btn btn=primary btn-lg" ng-click="createArtist()">Add</button>
+		<button class="btn" ng-click="getArtists()"></button>
 	</form>
 
 	<p>{{ artists.name }}</p>
+
+	<div ng-repeat="obj in artists">
+		<p>{{ obj.name }}</p>		
+	</div>
 </div>
