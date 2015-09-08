@@ -29,7 +29,7 @@ module.exports = function(app) {
 		})
 	});
 
-	//don't think either of these work. Need to learn more
+	//don't think either of these work. Need to learn
 
     // route to handle delete goes here (app.delete)
     // app.delete('/api/artists', function(req, res) {
