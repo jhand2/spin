@@ -7,12 +7,19 @@
 		<input type="text" class="form-controll input-lg text-center" placeholder="Add an Artist!" ng-model="formData.text">
 
 		<button type="submit" class="btn btn=primary btn-lg" ng-click="createArtist()">Add</button>
-		<button class="btn" ng-click="getArtists()"></button>
+		<button class="btn" ng-click="getArtists()">View Artists</button>
 	</form>
 
 	<p>{{ artists.name }}</p>
 
 	<div ng-repeat="obj in artists">
-		<p>{{ obj.name }}</p>		
+		<table class="artistTable">
+			<tr>
+				<td>
+					<p>{{ obj.name }}</p>
+					<button>Delete</button>
+				</td>
+			</tr>
+		</table>
 	</div>
 </div>

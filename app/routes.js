@@ -30,19 +30,18 @@ module.exports = function(app) {
 	});
 
 	//don't think either of these work. Need to learn
-
-    // route to handle delete goes here (app.delete)
-    // app.delete('/api/artists', function(req, res) {
-    // 	Artist.remove({'id': req.body}, function() {
-    // 		req.send("fin");
-    // 	})
-    // });
-
-    // app.deleteAll('/api/artists', function(req, res) {
-    // 	Artist.remove({}, function() {
-    // 		req.send('');
-    // 	})
-    // };
+    app.delete('/api/artists/:id', function(req, res) {
+    	Artist.remove({'id': req.params.id}, function() {
+    		res.send("fin");
+    	})
+    });
+ 
+    // delete all artist, be careful :)
+    app.delete('/api/artists', function(req, res) {
+    	Artist.remove({}, function() {
+    		res.send('everythang deleted');
+    	})
+    });
 
     // frontend routes =========================================================
     // route to handle all angular requests
