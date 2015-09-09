@@ -1,13 +1,14 @@
 angular.module('ArtistCtrl', []).controller('ArtistController',
 	function($scope, $http, Artist) {
-		$scope.tagline = 'Art is dead';
 		$scope.formData = {};
+		$scope.artists = {};
 
 		$scope.createArtist = function() {
 			console.log("calling create");
 			artistData = $scope.formData;
-			console.log(artistData);
-			Artist.create(artistData);
+			Artist.create(artistData).then(function(response) {
+				$scope.artists.push(response.data);
+			});
 			$scope.formData = {};
 		};
 
@@ -26,6 +27,8 @@ angular.module('ArtistCtrl', []).controller('ArtistController',
 
 			console.log($scope.artists);
 		};
+
+		$scope.getArtists();
 	}
 );
 

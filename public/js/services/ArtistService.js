@@ -7,7 +7,6 @@ angular.module('ArtistService', []).factory('Artist', ['$http', function($http) 
 		},
 
 		create : function(artstData) {
-			console.log(artstData);
 			return $http.post('/api/artists', artstData);
 		},
 

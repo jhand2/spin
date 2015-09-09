@@ -9,3 +9,7 @@ button::-moz-focus-inner {
 }
 
 :focus {outline:none !important;}
+
+.artist-container {
+	display: inline;
+}

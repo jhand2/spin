@@ -6,20 +6,11 @@
 	<form>
 		<input type="text" class="form-controll input-lg text-center" placeholder="Add an Artist!" ng-model="formData.text">
 
-		<button type="submit" class="btn btn=primary btn-lg" ng-click="createArtist()">Add</button>
-		<button class="btn" ng-click="getArtists()">View Artists</button>
+		<button type="submit" class="btn btn-primary btn-lg" ng-click="createArtist()">Add</button>
 	</form>
 
-	<p>{{ artists.name }}</p>
-
-	<div ng-repeat="obj in artists">
-		<table class="artistTable">
-			<tr>
-				<td>
-					<p>{{ obj.name }}</p>
-					<button ng-click="deleteArtist(obj._id)">X</button>
-				</td>
-			</tr>
-		</table>
+	<div class="artist-container row" ng-repeat="obj in artists">
+		<p class="col-sm-3">{{ obj.name }}</p>
+		<button class="col-sm-1 btn" ng-click="deleteArtist(obj._id)">x</button>
 	</div>
 </div>

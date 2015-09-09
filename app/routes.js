@@ -22,16 +22,14 @@ module.exports = function(app) {
 	app.post('/api/artists', function(req, res) {
 		var artist = new Artist(req.body);
 		artist.name = req.body.text;
-		console.log(artist);
 		artist.save(function(err, artist) {
 			if (err) return console.error(err);
-			console.log('artist saved');
+			res.json(artist);
 		})
 	});
 
 	//don't think either of these work. Need to learn
     app.delete('/api/artists/:id', function(req, res) {
-    	console.log('Delete function hit');
     	Artist.remove({'_id': req.params.id}, function() {
     		res.send("fin");
     	})
