@@ -15,10 +15,16 @@ angular.module('ArtistCtrl', []).controller('ArtistController',
 			Artist.get().then(function(response) {
 				$scope.artists = response.data;
 			});
-		}
+		};
 
-		$scope.deleteArtists = function(id) {
-			Artist.remove(id);
+		$scope.deleteArtist = function(id) {
+			console.log(id);
+			Artist.delete(id);
+			$scope.artists = $scope.artists.filter(function (artist) {
+				return artist._id !== id;
+			});
+
+			console.log($scope.artists);
 		};
 	}
 );
